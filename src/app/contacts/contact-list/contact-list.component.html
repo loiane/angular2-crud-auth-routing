@@ -1,0 +1,17 @@
+<p>
+  Mostrando {{ contacts.length }} contatos.
+</p>
+
+<div class="collection">
+  <app-contact-list-item
+    *ngFor="let contact of contacts"
+    [contact]="contact">
+  </app-contact-list-item>
+</div>
+
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+  <a class="btn-floating btn-large waves-effect waves-light green"
+     routerLink="new">
+    <i class="material-icons">add</i>
+  </a>
+</div>

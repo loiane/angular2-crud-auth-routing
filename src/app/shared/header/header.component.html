@@ -1,0 +1,21 @@
+<div class="navbar-fixed">
+<nav class="blue darken-3">
+  <div class="nav-wrapper">
+    <a class="brand-logo" style="padding-left: 15px"
+      routerLink="">
+      Angular 2 na Prática
+    </a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li routerLinkActive="active">
+        <a routerLink="/contacts">Contatos</a>
+      </li>
+      <li routerLinkActive="active" *ngIf="!isAuth()">
+        <a routerLink="/signin">Login</a>
+      </li>
+      <li routerLinkActive="active" *ngIf="isAuth()">
+        <a (click)="onLogout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
