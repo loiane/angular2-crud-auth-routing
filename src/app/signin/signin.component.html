@@ -17,9 +17,9 @@
         <input id="password" type="password" class="validate"
                formControlName="password"
                [class.invalid]="form.controls['password'].touched && !form.controls['password'].valid">
-        <label for="email"
-               data-error="Sencha obrigatória">
-          Email
+        <label for="password"
+               data-error="Senha obrigatória">
+          Password
         </label>
       </div>
     </div>
@@ -30,6 +30,6 @@
           Login<i class="material-icons right">send</i>
         </button>
       </div>
-    </div>  
+    </div>
   </form>
 </div>
