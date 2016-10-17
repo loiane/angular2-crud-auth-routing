@@ -83,6 +83,8 @@ export class ContactFormComponent implements OnInit, OnDestroy, ComponentCanDeac
       result = this.contactsService.add(contactValue);
     }
 
+    this.form.reset();
+
     result.subscribe(data => this.navigateBack(),
     err => {
       alert("Contato não salvo.");
