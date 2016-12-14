@@ -37,11 +37,11 @@ export class ContactFormComponent implements OnInit, OnDestroy, ComponentCanDeac
           this.contactIndex = +params['id'];
           this.contactsService.get(this.contactIndex)
           .subscribe(data => this.contact = data);
-          this.title = 'Editar Contato';
+          this.title = 'Edit contact';
         } else {
           this.isNew = true;
           this.contact = new Contact();
-          this.title = 'Novo Contato';
+          this.title = 'New contact';
         }
         this.initForm();
       }
@@ -87,7 +87,7 @@ export class ContactFormComponent implements OnInit, OnDestroy, ComponentCanDeac
 
     result.subscribe(data => this.navigateBack(),
     err => {
-      alert("Contato não salvo.");
+      alert("An error occurred.");
     });
   }
 
@@ -97,7 +97,7 @@ export class ContactFormComponent implements OnInit, OnDestroy, ComponentCanDeac
 
   canDeactivate(): Observable<boolean> | boolean {
     if (this.form.dirty) {
-      return confirm('Deseja realmente sair?');
+      return confirm('Do you want to leave this page?');
     }
     return true;
   }

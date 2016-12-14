@@ -3,20 +3,20 @@
     <div class="card-panel">
       <div class="card-stacked">
         <div class="card-content">
-          <p>Detalhes do Contato:</p>
+          <p>Contact details:</p>
           <p>#: {{ selectedContact?.id }}</p>
-          <p>Nome: {{ selectedContact?.name }}</p>
+          <p>Name: {{ selectedContact?.name }}</p>
           <p>Email: {{ selectedContact?.email }}</p>
           <p>Phone: {{ selectedContact?.phone?.phoneNumber }}</p>
         </div>
         <div class="card-action">
           <a class="waves-effect waves-light btn"
             (click)="onEdit()">
-            <i class="material-icons left">mode_edit</i>Editar
+            <i class="material-icons left">mode_edit</i>Edit
           </a>
           <a class="waves-effect waves-light btn red"
             (click)="onDelete()">
-            <i class="material-icons left">delete</i>Remover
+            <i class="material-icons left">delete</i>Remove
           </a>
         </div>
       </div>
