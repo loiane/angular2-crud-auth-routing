@@ -10,7 +10,7 @@
         >
         <label for="name"
                [class.active]="contact.name"
-               data-error="Nome é obrigatório com pelo menos 3 caracteres">
+               data-error="You need to enter at least 3 chars">
           Name
         </label>
       </div>
@@ -23,7 +23,7 @@
                [class.invalid]="form.controls['email'].touched && !form.controls['email'].valid">
         <label for="email"
                [class.active]="contact.email"
-               data-error="Email inválido">
+               data-error="Invalid email">
           Email
         </label>
       </div>
@@ -38,7 +38,7 @@
                   && !form.controls['phone'].controls['phoneNumber'].valid">
           <label for="phoneNumber"
                  [class.active]="contact.phone.phoneNumber"
-                 data-error="Telefone Inválido">
+                 data-error="Invalid Phone">
             Phone
           </label>
         </div>
@@ -51,7 +51,7 @@
           Submit<i class="material-icons right">send</i>
         </button>
         <a class="waves-effect waves-light btn red"
-        (click)="onCancel()">Cancelar</a>
+        (click)="onCancel()">Cancel</a>
       </div>
     </div>
   </form>
