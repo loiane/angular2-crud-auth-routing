@@ -9,7 +9,19 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class HeaderComponent {
 
+  private showNavBar: boolean = false;
+
   constructor(private authService: AuthService) { }
+
+  ngOnInit(){
+    this.authService.showNavBarEmitter.subscribe(
+      (mode: boolean) => {
+        if (mode !== null) {
+          this.showNavBar = mode;
+        }
+      }
+    );
+  }
 
   isAuth() {
     return this.authService.isAuthenticated();

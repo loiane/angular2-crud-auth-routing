@@ -1,10 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from "rxjs/BehaviorSubject";
+import { Observable } from 'rxjs/Rx';
 
 import { User } from './user.interface';
 
 @Injectable()
 export class AuthService {
+
+  private _showNavBar = new BehaviorSubject<boolean>(null);
+  public showNavBarEmitter: Observable<boolean> = this._showNavBar.asObservable();
 
   private authenticated = false;
 
@@ -13,6 +18,7 @@ export class AuthService {
   signIn(user: User) {
     if (user.email === 'user@email.com' && user.password === '123456'){
       this.authenticated = true;
+      this.showNavBar(true);
       this.router.navigate(['/']);
     } else {
       this.authenticated = false;
@@ -21,10 +27,15 @@ export class AuthService {
 
   logout() {
     this.authenticated = false;
+    this.showNavBar(false);
     this.router.navigate(['/signin']);
   }
 
   isAuthenticated() {
     return this.authenticated;
   }
+
+  private showNavBar(ifShow: boolean) {
+        this._showNavBar.next(ifShow);
+    }
 }
