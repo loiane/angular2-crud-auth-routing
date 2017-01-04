@@ -8,8 +8,8 @@ import { User } from './user.interface';
 @Injectable()
 export class AuthService {
 
-  private _showNavBar = new BehaviorSubject<boolean>(null);
-  public showNavBarEmitter: Observable<boolean> = this._showNavBar.asObservable();
+  //private _showNavBar = new BehaviorSubject<boolean>(null);
+  public showNavBarEmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   private authenticated = false;
 
@@ -36,6 +36,6 @@ export class AuthService {
   }
 
   private showNavBar(ifShow: boolean) {
-        this._showNavBar.next(ifShow);
-    }
+     this.showNavBarEmitter.emit(ifShow);
+  }
 }
