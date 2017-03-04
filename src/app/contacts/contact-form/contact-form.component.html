@@ -1,5 +1,5 @@
 <h5>{{ title }}</h5>
-<div class="row">
+<div class="row" *ngIf="contact" >
   <form materialize class="col s12" [formGroup]="form" (ngSubmit)="onSave()">
     <div class="row">
       <div class="input-field col s12">
