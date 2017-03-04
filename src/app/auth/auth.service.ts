@@ -16,7 +16,8 @@ export class AuthService {
   constructor(private router: Router) {}
 
   signIn(user: User) {
-    if (user.email === 'user@email.com' && user.password === '123456'){
+    if ((user.email === 'user@email.com' || user.email === 'usuario@email.com') 
+      && user.password === '123456'){
       this.authenticated = true;
       this.showNavBar(true);
       this.router.navigate(['/']);

@@ -1,10 +1,10 @@
-import { Angular2NapraticaPage } from './app.po';
+import { AngularCrudAuthRoutingPage } from './app.po';
 
-describe('angular2-napratica App', function() {
-  let page: Angular2NapraticaPage;
+describe('angular-crud-auth-routing App', () => {
+  let page: AngularCrudAuthRoutingPage;
 
   beforeEach(() => {
-    page = new Angular2NapraticaPage();
+    page = new AngularCrudAuthRoutingPage();
   });
 
   it('should display message saying app works', () => {

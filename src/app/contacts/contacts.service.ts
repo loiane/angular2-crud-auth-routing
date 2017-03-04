@@ -25,8 +25,7 @@ export class ContactsService {
 
   get(id){
     return this.getAll()
-      .do((list: any) => list.find(contact => contact.id === id))
-      .map(data => data.length > 0 ? data[0] : null)
+      .map((list: any) => list.find(contact => contact.id == id))
       .catch(this.handleError);
   }
 

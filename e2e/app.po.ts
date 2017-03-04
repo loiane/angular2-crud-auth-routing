@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class Angular2NapraticaPage {
+export class AngularCrudAuthRoutingPage {
   navigateTo() {
     return browser.get('/');
   }
