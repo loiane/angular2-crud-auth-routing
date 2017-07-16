@@ -1,5 +1,7 @@
 # AngularCrudAuthRouting
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/loiane/angular2-crud-auth-routing.svg)](https://greenkeeper.io/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.1.
 
 ## Development server
